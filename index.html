@@ -7,123 +7,160 @@
     <style>
         body { 
             font-family: Arial, sans-serif; 
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            margin: 0;
+            padding: 0; 
             background-color: #f0f2f5; 
             color: #333; 
             line-height: 1.6;
         }
-        .header-banner { /* New class for a top banner */
-            background-color: #0d6efd; /* Primary blue */
+        .header-banner {
+            background-color: #0d6efd; 
             color: white;
-            padding: 20px 0;
+            padding: 30px 20px; /* Increased padding */
             text-align: center;
             margin-bottom: 30px;
         }
         .header-banner h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.8em; /* Slightly larger */
         }
         .container {
-            max-width: 900px;
+            max-width: 1200px; /* Wider container for two columns */
             margin: auto;
-            background-color: #fff;
-            padding: 30px; /* Increased padding */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Slightly more pronounced shadow */
+            padding: 20px; 
         }
-        .intro-text { /* Class for the intro paragraph */
+        .intro-text { 
             text-align: center; 
             margin-bottom: 40px;
-            font-size: 1.1em;
+            font-size: 1.2em; /* Slightly larger intro */
             color: #555;
         }
+        
+        /* Project Grid Styles */
+        .projects-grid {
+            display: flex; /* Enable flexbox */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            gap: 30px; /* Spacing between project items */
+            justify-content: center; /* Center items if there's extra space on the last line */
+        }
         .project {
-            margin-bottom: 50px; /* Increased spacing */
-            padding-bottom: 30px; /* Increased padding */
-            border-bottom: 1px solid #e0e0e0; /* Lighter border */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            /* Each project takes up roughly half the width, accounting for gap */
+            flex-basis: calc(50% - 15px); /* 50% minus half the gap */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            display: flex; /* Make project an inner flex container for content alignment */
+            flex-direction: column; /* Stack content vertically within each project */
+            margin-bottom: 30px; /* Add margin for when items wrap */
         }
-        .project:last-child {
-            border-bottom: none;
-            margin-bottom: 0; /* No bottom margin for the last project */
+
+        /* Responsive: On smaller screens, make projects stack vertically */
+        @media (max-width: 768px) {
+            .project {
+                flex-basis: 100%; /* Full width on smaller screens */
+            }
         }
+
         .project h2 {
-            color: #1976d2; /* Consistent project title blue */
-            margin-top: 0; /* Remove top margin if it's the first element in .project */
-            margin-bottom: 15px; /* Spacing after title */
-            border-bottom: 2px solid #0d6efd; /* Underline for titles */
-            padding-bottom: 5px;
+            color: #1976d2; 
+            margin-top: 0; 
+            margin-bottom: 15px; 
+            font-size: 1.5em; /* Adjusted title size */
         }
-        .project p {
-            margin-bottom: 15px; /* Spacing between paragraphs */
+        .project p.description { /* Class for the description paragraph */
+            margin-bottom: 15px; 
+            flex-grow: 1; /* Allows description to take available space, pushing button down */
         }
         .project img {
             max-width: 100%;
-            height: auto;
-            border-radius: 5px; /* Slightly more rounded corners */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 300px; /* Max height for images to keep them reasonable */
+            object-fit: contain; /* Or 'cover'; 'contain' ensures whole image is visible */
+            border-radius: 5px; 
             margin-top: 15px;
-            border: 1px solid #ccc; /* Lighter image border */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 15px; /* Space between image and button */
+            border: 1px solid #ccc; 
         }
-        .project .project-link { /* Specific class for the link button */
+        .project .project-link { 
             display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px; /* Bigger button */
+            padding: 10px 20px; 
             background-color: #0d6efd;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            text-align: center; /* Center text in button */
             transition: background-color 0.3s ease;
+            margin-top: auto; /* Pushes button to the bottom if description is short */
         }
         .project .project-link:hover {
-            background-color: #0b5ed7; /* Darker blue on hover */
+            background-color: #0b5ed7; 
         }
-        .footer-banner { /* New class for a bottom banner */
+        .footer-banner { 
             text-align: center;
             margin-top: 40px;
             padding: 20px 0;
-            background-color: #343a40; /* Dark footer */
-            color: #f8f9fa; /* Light text for footer */
+            background-color: #343a40; 
+            color: #f8f9fa; 
         }
     </style>
 </head>
 <body>
     <div class="header-banner">
-        <h1>ZappPSR's Portfolio</h1>
+        <h1>ZappPSR's Portfolio</h1> <!-- Changed here -->
     </div>
 
     <div class="container">
         <p class="intro-text">Welcome! Showcasing my data visualization and API integration projects.</p>
 
-        <!-- Social Media Dashboard Project -->
-        <div class="project">
-            <h2>Social Media Trends Dashboard</h2>
-            <p>
-                This dashboard consolidates and visualizes trending data from multiple social media platforms including YouTube, Reddit, Twitch, Spotify, and TMDB. 
-                It utilizes Python scripts to fetch data via APIs and Power BI for interactive reporting, providing insights into current online trends.
-            </p>
-            <img src="images/bi_social.png" alt="Social Media Dashboard Screenshot">
-            <p><a href="https://app.powerbi.com/view?r=eyJrIjoiZDc5NWNhYTAtODhkMC00MzFkLTkwYzgtYmZhZGQzYTUyMTUxIiwidCI6Ijg4MTc0MzBhLWU0NzctNGM4OC05OTAwLTljOGRlN2E5ODljNCJ9" target="_blank" class="project-link">View Social Dashboard</a></p>
-        </div>
+        <div class="projects-grid">
+            <!-- Project 1: Social Media Dashboard -->
+            <div class="project">
+                <h2>Social Media Trends Dashboard</h2>
+                <p class="description">
+                    This dashboard consolidates and visualizes trending data from multiple social media platforms including YouTube, Reddit, Twitch, Spotify, and TMDB. 
+                    It utilizes Python scripts to fetch data via APIs and Power BI for interactive reporting, providing insights into current online trends.
+                </p>
+                <img src="images/bi_social.png" alt="Social Media Dashboard Screenshot">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiZDc5NWNhYTAtODhkMC00MzFkLTkwYzgtYmZhZGQzYTUyMTUxIiwidCI6Ijg4MTc0MzBhLWU0NzctNGM4OC05OTAwLTljOGRlN2E5ODljNCJ9" target="_blank" class="project-link">View Social Dashboard</a>
+            </div>
 
-        <!-- Pokemon Project -->
-        <div class="project">
-            <h2>Pokémon Directory</h2>
-            <p>
-                An interactive Pokémon directory displaying sprites, types, and base statistics for the first 20 Pokémon. 
-                Data is fetched live from the PokéAPI using Python and visualized in Power BI, offering a quick reference for Pokémon enthusiasts.
-            </p>
-            <img src="images/bi_pokemon.png" alt="Pokémon Dashboard Screenshot">
-            <p><a href="https://app.powerbi.com/view?r=eyJrIjoiMTY2ZTVjMWMtYWQxNC00NGI4LWE0YmQtMzY3NzI1ZmE3ZWRiIiwidCI6Ijg4MTc0MzBhLWU0NzctNGM4OC05OTAwLTljOGRlN2E5ODljNCJ9" target="_blank" class="project-link">View Pokémon Directory</a></p>
-        </div>
+            <!-- Project 2: Pokemon Directory -->
+            <div class="project">
+                <h2>Pokémon Directory</h2>
+                <p class="description">
+                    An interactive Pokémon directory displaying sprites, types, and base statistics for the first 20 Pokémon. 
+                    Data is fetched live from the PokéAPI using Python and visualized in Power BI, offering a quick reference for Pokémon enthusiasts.
+                </p>
+                <img src="images/bi_pokemon.png" alt="Pokémon Dashboard Screenshot">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiMTY2ZTVjMWMtYWQxNC00NGI4LWE0YmQtMzY3NzI1ZmE3ZWRiIiwidCI6Ijg4MTc0MzBhLWU0NzctNGM4OC05OTAwLTljOGRlN2E5ODljNCJ9" target="_blank" class="project-link">View Pokémon Directory</a>
+            </div>
 
-        <!-- You can add more projects here following the same structure -->
+            <!-- TO ADD MORE PROJECTS:
+                 Copy the entire <div class="project"> ... </div> block 
+                 and paste it here, then update the content (h2, p, img src, a href).
+                 They will automatically try to fit two per line.
+            -->
+            
+            <!-- Example of how a third project would look (it would start a new line if two are already there) -->
+            <!-- 
+            <div class="project">
+                <h2>Another Awesome Project</h2>
+                <p class="description">
+                    Description of your third amazing project goes here. This shows how new projects will wrap.
+                </p>
+                <img src="images/placeholder_project.png" alt="Another Project Screenshot">
+                <a href="#" target="_blank" class="project-link">View Project</a>
+            </div> 
+            -->
 
-    </div>
+        </div> <!-- End of .projects-grid -->
+    </div> <!-- End of .container -->
 
     <div class="footer-banner">
-        <p>© 2025 ZappPSR All rights reserved. (Site under construction)</p>
+        <p>© 2025 ZappPSR. All rights reserved. (Site under construction)</p> <!-- Changed here -->
     </div>
 </body>
 </html>
