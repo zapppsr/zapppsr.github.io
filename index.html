@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZappPSR's Portfolio</title>
-    <style>
+        <style>
         body { 
-            font-family: Arial, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* Common Cayman font stack */
             margin: 0;
             padding: 0; 
             background-color: #f0f2f5; 
@@ -14,96 +14,118 @@
             line-height: 1.6;
         }
         .header-banner {
-            background-color: #0d6efd; 
+            /* Cayman-style gradient: Deep teal to a lighter teal/green */
+            background-color: #159957; /* Fallback color */
+            background-image: linear-gradient(120deg, #155799, #159957); /* Gradient */
             color: white;
-            padding: 30px 20px; /* Increased padding */
+            padding: 50px 20px; /* Increased padding for a more prominent header */
             text-align: center;
             margin-bottom: 30px;
         }
         .header-banner h1 {
             margin: 0;
-            font-size: 2.8em; /* Slightly larger */
+            font-size: 3em; /* Larger title */
+            font-weight: 300; /* Lighter font weight often seen in Cayman */
         }
         .container {
-            max-width: 1200px; /* Wider container for two columns */
+            max-width: 1200px; 
             margin: auto;
             padding: 20px; 
         }
         .intro-text { 
             text-align: center; 
             margin-bottom: 40px;
-            font-size: 1.2em; /* Slightly larger intro */
+            font-size: 1.2em; 
             color: #555;
         }
         
-        /* Project Grid Styles */
         .projects-grid {
-            display: flex; /* Enable flexbox */
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            gap: 30px; /* Spacing between project items */
-            justify-content: center; /* Center items if there's extra space on the last line */
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            justify-content: center; 
         }
         .project {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            /* Each project takes up roughly half the width, accounting for gap */
-            flex-basis: calc(50% - 15px); /* 50% minus half the gap */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-            display: flex; /* Make project an inner flex container for content alignment */
-            flex-direction: column; /* Stack content vertically within each project */
-            margin-bottom: 30px; /* Add margin for when items wrap */
+            padding: 25px; /* Slightly more padding */
+            border-radius: 6px; /* Cayman uses slightly less rounded corners */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Softer shadow */
+            flex-basis: calc(50% - 15px); 
+            box-sizing: border-box; 
+            display: flex; 
+            flex-direction: column; 
+            margin-bottom: 30px; 
         }
 
-        /* Responsive: On smaller screens, make projects stack vertically */
         @media (max-width: 768px) {
             .project {
-                flex-basis: 100%; /* Full width on smaller screens */
+                flex-basis: 100%; 
             }
         }
 
         .project h2 {
-            color: #1976d2; 
+            color: #155799; /* Using one of the gradient start colors */
             margin-top: 0; 
             margin-bottom: 15px; 
-            font-size: 1.5em; /* Adjusted title size */
+            font-size: 1.6em; /* Adjusted */
+            font-weight: 600;
+            border-bottom: none; /* Removing previous underline for a cleaner look like Cayman */
+            padding-bottom: 0;
         }
-        .project p.description { /* Class for the description paragraph */
+        .project p.description { 
             margin-bottom: 15px; 
-            flex-grow: 1; /* Allows description to take available space, pushing button down */
+            flex-grow: 1; 
+            color: #444; /* Slightly darker text for readability */
         }
         .project img {
             max-width: 100%;
-            height: auto; /* Maintain aspect ratio */
-            max-height: 300px; /* Max height for images to keep them reasonable */
-            object-fit: contain; /* Or 'cover'; 'contain' ensures whole image is visible */
-            border-radius: 5px; 
+            height: auto; 
+            max-height: 300px; 
+            object-fit: contain; 
+            border-radius: 4px; 
             margin-top: 15px;
-            margin-bottom: 15px; /* Space between image and button */
-            border: 1px solid #ccc; 
+            margin-bottom: 20px; /* More space before button */
+            border: 1px solid #eee; /* Lighter border */
         }
         .project .project-link { 
             display: inline-block;
-            padding: 10px 20px; 
-            background-color: #0d6efd;
-            color: white;
+            padding: 12px 25px; /* Adjusted padding */
+            /* "Glassy" button attempt */
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+            border: 1px solid rgba(0Yes, absolutely! That's a great find. The **Cayman theme** is a very popular and clean theme for GitHub Pages, and it's one of the officially supported themes, which makes it easy to apply.
+
+You're right, it has a nice gradient header and a generally polished look.
+
+**Can we apply this style without changing the layout that is perfect?**
+
+Mostly, yes, with some considerations:
+
+1, 0, 0, 0.2); /* Subtle border */
+            color: #155799; /* Text color matching a header color */
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 4px; /* Cayman-like border radius */
             font-weight: bold;
-            text-align: center; /* Center text in button */
-            transition: background-color 0.3s ease;
-            margin-top: auto; /* Pushes button to the bottom if description is short */
+            text-align: center; 
+            transition: all 0.3s ease; /* Smooth transition for multiple properties */
+            margin-top: auto; 
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         .project .project-link:hover {
-            background-color: #0b5ed7; 
+            background-color: rgba(255, 255, 255, 0.5); /* Slightly more opaque on hover */
+            border-color: rgba(0,0,0,0.3);
+            color: #159957; /* Change text color on hover */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .footer-banner { 
             text-align: center;
-            margin-top: 40px;
-            padding: 20px 0;
-            background-color: #343a40; 
-            color: #f8f9fa; 
+            margin-top: 50px; /* More space before footer */
+            padding: 30px 0; /* More padding in footer */
+            background-color: #f5f5f5; /* Lighter footer like Cayman */
+            color: #555; 
+            border-top: 1px solid #e0e0e0;
+        }
+        .footer-banner p {
+            margin: 0;
         }
     </style>
 </head>
