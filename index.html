@@ -5,14 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zapppsr's Portfolio</title>
     <style>
-        body { font-family: sans-serif; margin: 40px; background-color: #f4f4f4; color: #333; }
-        h1 { color: #0056b3; }
-        p { font-size: 1.1em; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #f0f2f5; 
+            color: #333; 
+            line-height: 1.6;
+        }
+        .header-banner { /* New class for a top banner */
+            background-color: #0d6efd; /* Primary blue */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header-banner h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px; /* Increased padding */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Slightly more pronounced shadow */
+        }
+        .intro-text { /* Class for the intro paragraph */
+            text-align: center; 
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .project {
+            margin-bottom: 50px; /* Increased spacing */
+            padding-bottom: 30px; /* Increased padding */
+            border-bottom: 1px solid #e0e0e0; /* Lighter border */
+        }
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0; /* No bottom margin for the last project */
+        }
+        .project h2 {
+            color: #1976d2; /* Consistent project title blue */
+            margin-top: 0; /* Remove top margin if it's the first element in .project */
+            margin-bottom: 15px; /* Spacing after title */
+            border-bottom: 2px solid #0d6efd; /* Underline for titles */
+            padding-bottom: 5px;
+        }
+        .project p {
+            margin-bottom: 15px; /* Spacing between paragraphs */
+        }
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px; /* Slightly more rounded corners */
+            margin-top: 15px;
+            border: 1px solid #ccc; /* Lighter image border */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .project .project-link { /* Specific class for the link button */
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px; /* Bigger button */
+            background-color: #0d6efd;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .project .project-link:hover {
+            background-color: #0b5ed7; /* Darker blue on hover */
+        }
+        .footer-banner { /* New class for a bottom banner */
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            background-color: #343a40; /* Dark footer */
+            color: #f8f9fa; /* Light text for footer */
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to zapppsr's Portfolio!</h1>
-    <p>This is where my awesome projects will be showcased.</p>
-    <p>Site under construction. Check back soon!</p>
+    <div class="header-banner">
+        <h1>zapppsr's Portfolio</h1>
+    </div>
+
+    <div class="container">
+        <p class="intro-text">Welcome! Showcasing my data visualization and API integration projects.</p>
+
+        <!-- Social Media Dashboard Project -->
+        <div class="project">
+            <h2>Social Media Trends Dashboard</h2>
+            <p>
+                This dashboard consolidates and visualizes trending data from multiple social media platforms including YouTube, Reddit, Twitch, Spotify, and TMDB. 
+                It utilizes Python scripts to fetch data via APIs and Power BI for interactive reporting, providing insights into current online trends.
+            </p>
+            <img src="images/bi_social.png" alt="Social Media Dashboard Screenshot">
+            <p><a href="https://app.powerbi.com/view?r=eyJrIjoiZDc5NWNhYTAtODhkMC00MzFkLTkwYzgtYmZhZGQzYTUyMTUxIiwidCI6Ijg4MTc0MzBhLWU0NzctNGM4OC05OTAwLTljOGRlN2E5ODljNCJ9" target="_blank" class="project-link">View Social Dashboard</a></p>
+        </div>
+
+        <!-- Pokemon Project -->
+        <div class="project">
+            <h2>Pokémon Directory</h2>
+            <p>
+                An interactive Pokémon directory displaying sprites, types, and base statistics for the first 20 Pokémon. 
+                Data is fetched live from the PokéAPI using Python and visualized in Power BI, offering a quick reference for Pokémon enthusiasts.
+            </p>
+            <img src="images/bi_pokemon.png" alt="Pokémon Dashboard Screenshot">
+            <p><a href="https://app.powerbi.com/view?r=eyJrIjoiMTY2ZTVjMWMtYWQxNC00NGI4LWE0YmQtMzY3NzI1ZmE3ZWRiIiwidCI6Ijg4MTc0MzBhLWU0NzctNGM4OC05OTAwLTljOGRlN2E5ODljNCJ9" target="_blank" class="project-link">View Pokémon Directory</a></p>
+        </div>
+
+        <!-- You can add more projects here following the same structure -->
+
+    </div>
+
+    <div class="footer-banner">
+        <p>© 2025 zapppsr. All rights reserved. (Site under construction)</p>
+    </div>
 </body>
 </html>
