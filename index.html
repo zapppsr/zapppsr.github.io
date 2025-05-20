@@ -89,26 +89,23 @@
         }
         .project .project-link { 
             display: inline-block;
-            padding: 12px 25px; /* Adjusted padding */
-            /* "Glassy" button attempt */
-            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
-            border: 1px solid rgba(0Yes, absolutely! That's a great find. The **Cayman theme** is a very popular and clean theme for GitHub Pages, and it's one of the officially supported themes, which makes it easy to apply.
-
-You're right, it has a nice gradient header and a generally polished look.
-
-**Can we apply this style without changing the layout that is perfect?**
-
-Mostly, yes, with some considerations:
-
-1, 0, 0, 0.2); /* Subtle border */
-            color: #155799; /* Text color matching a header color */
+            padding: 12px 25px; 
+            background-color: #155799; /* Solid blue from header gradient */
+            /* border: 1px solid #155799; */ /* Can remove or match background */
+            color: white; /* White text for good contrast on blue */
             text-decoration: none;
-            border-radius: 4px; /* Cayman-like border radius */
+            border-radius: 4px; 
             font-weight: bold;
             text-align: center; 
-            transition: all 0.3s ease; /* Smooth transition for multiple properties */
+            transition: all 0.2s ease-in-out; /* Slightly faster transition */
             margin-top: auto; 
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1); /* Softer shadow for button */
+        }
+        .project .project-link:hover {
+            background-color: #1a6aa3; /* A slightly lighter or different shade of blue on hover */
+            /* color: white; */ /* Keep text color white */
+            box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+            transform: translateY(-1px); /* Subtle lift effect */
         }
         .project .project-link:hover {
             background-color: rgba(255, 255, 255, 0.5); /* Slightly more opaque on hover */
