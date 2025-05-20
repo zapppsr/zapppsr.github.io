@@ -9,7 +9,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             margin: 0;
             padding: 0; 
-            background-color: #f0f2f5; 
+            background-color: #f0f2f5; /* Light gray page background */
             color: #333; 
             line-height: 1.6;
         }
@@ -45,20 +45,22 @@
             justify-content: center; 
         }
         .project {
-            background-color: #f8f9fa; /* MODIFIED: Light gray background for cards */
+            /* MODIFIED: Card background same as darker part of header gradient */
+            background-color: #155799; 
+            color: white; /* MODIFIED: Text inside card is now white */
             padding: 25px; 
             border-radius: 6px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* MODIFIED: Slightly more defined shadow */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Slightly stronger shadow for dark card */
             flex-basis: calc(50% - 15px); 
             box-sizing: border-box; 
             display: flex; 
             flex-direction: column; 
             margin-bottom: 30px; 
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* For hover effect on card */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-        .project:hover { /* Optional: Add a slight lift/shadow change on project card hover */
+        .project:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Stronger shadow on hover for dark card */
         }
 
         @media (max-width: 768px) {
@@ -68,18 +70,17 @@
         }
 
         .project h2 {
-            color: #155799; 
+            /* MODIFIED: Project title color to contrast with dark blue card */
+            color: #90caf9; /* A light blue, or white if preferred: #ffffff */
             margin-top: 0; 
             margin-bottom: 15px; 
             font-size: 1.6em; 
             font-weight: 600;
-            border-bottom: none; 
-            padding-bottom: 0;
         }
         .project p.description { 
             margin-bottom: 15px; 
             flex-grow: 1; 
-            color: #444; 
+            /* color is inherited as white from .project, which is good */
         }
         .project img {
             max-width: 100%;
@@ -89,39 +90,38 @@
             border-radius: 4px; 
             margin-top: 15px;
             margin-bottom: 20px; 
-            border: 1px solid #e0e0e0; /* MODIFIED: Slightly more visible border for image */
+            border: 1px solid #4a7e9c; /* Border color that works with dark blue */
         }
         
-        /* REVISED Glassy Button Style */
+        /* REVISED Glassy Button Style for DARK CARD BACKGROUND */
         .project .project-link { 
             display: inline-block;
             padding: 12px 25px; 
-            background-color: rgba(220, 225, 230, 0.3); /* MODIFIED: Light semi-transparent bg - adjust alpha (0.3) */
-            border: 1px solid rgba(0, 0, 0, 0.1);      /* MODIFIED: Very subtle darker border */
-            color: #0d6efd;                             /* MODIFIED: Primary blue text color */
+            /* MODIFIED: More transparent white/light background for glassy effect on dark card */
+            background-color: rgba(255, 255, 255, 0.15); 
+            border: 1px solid rgba(255, 255, 255, 0.3);      
+            color: white; /* MODIFIED: White text for button */
             text-decoration: none;
             border-radius: 5px; 
             font-weight: bold;
             text-align: center; 
             transition: all 0.2s ease-in-out;
             margin-top: auto; 
-            /* backdrop-filter: blur(2px); */ /* Optional: for frosted glass, good browser support needed */
+            backdrop-filter: blur(3px); /* More pronounced blur for effect on dark bg */
         }
         .project .project-link:hover {
-            background-color: rgba(210, 215, 220, 0.45); /* MODIFIED: Slightly more opaque on hover */
-            border-color: rgba(0, 0, 0, 0.2);         /* MODIFIED: Slightly darker border on hover */
-            color: #0b5ed7;                             /* MODIFIED: Darker blue text on hover */
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);      /* MODIFIED: Subtle shadow on hover */
+            background-color: rgba(255, 255, 255, 0.25); 
+            border-color: rgba(255, 255, 255, 0.5);
+            /* color: white; */ /* Keep text white */
         }
-        /* Removed duplicated .project .project-link:hover rule that was conflicting */
 
         .footer-banner { 
             text-align: center;
             margin-top: 50px; 
             padding: 30px 0; 
-            background-color: #f5f5f5; 
-            color: #555; 
-            border-top: 1px solid #e0e0e0;
+            background-color: #343a40; /* Keeping footer dark */
+            color: #f8f9fa; 
+            border-top: 1px solid #495057; /* Adjusted border for dark footer */
         }
         .footer-banner p {
             margin: 0;
