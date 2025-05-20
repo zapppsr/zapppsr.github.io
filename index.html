@@ -14,16 +14,24 @@
             line-height: 1.6;
         }
         .header-banner {
-            background-color: #159957; /* Fallback color (the green part) */
-            background-image: linear-gradient(120deg, #155799, #159957); /* Blue to Green gradient */
+            background-color: #159957; 
+            background-image: linear-gradient(120deg, #155799, #159957); 
             color: white;
-            padding: 50px 20px; 
+            padding: 40px 20px; /* Adjusted padding a bit */
             text-align: center;
             margin-bottom: 30px;
+            display: flex; /* Enable flexbox for alignment */
+            align-items: center; /* Vertically align items in the middle */
+            justify-content: center; /* Horizontally center items */
+        }
+        .header-banner img.logo { /* Style for the logo */
+            height: 50px; /* Adjust size as needed */
+            width: auto;
+            margin-right: 15px; /* Space between icon and title */
         }
         .header-banner h1 {
             margin: 0;
-            font-size: 3em; 
+            font-size: 2.8em; /* Slightly adjusted */
             font-weight: 300; 
         }
         .container {
@@ -45,9 +53,8 @@
             justify-content: center; 
         }
         .project {
-            /* MODIFIED: Card background to match the green part of header gradient */
-            background-color: #157A7A; 
-            color: white; /* Text inside card is white */
+            background-color: #157A7A; /* Your chosen teal color */
+            color: white; 
             padding: 25px; 
             border-radius: 6px; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
@@ -70,8 +77,7 @@
         }
 
         .project h2 {
-            /* MODIFIED: Project title color to contrast with green card */
-            color: #c8e6c9; /* A very light green, or white: #ffffff */
+            color: #ffffff; /* White for titles on teal background */
             margin-top: 0; 
             margin-bottom: 15px; 
             font-size: 1.6em; 
@@ -89,14 +95,13 @@
             border-radius: 4px; 
             margin-top: 15px;
             margin-bottom: 20px; 
-            border: 1px solid #4caf50; /* Border color that works with green */
+            border: 1px solid #20a0a0; /* Adjusted border to complement teal */
         }
         
-        /* REVISED Glassy Button Style for GREEN CARD BACKGROUND */
         .project .project-link { 
             display: inline-block;
             padding: 12px 25px; 
-            background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white on green */
+            background-color: rgba(255, 255, 255, 0.15); 
             border: 1px solid rgba(255, 255, 255, 0.3);      
             color: white; 
             text-decoration: none;
@@ -127,6 +132,8 @@
 </head>
 <body>
     <div class="header-banner">
+        <!-- ADDED IMAGE HERE -->
+        <img src="images/dashicon.png" alt="Dashboard Icon" class="logo"> 
         <h1>ZappPSR's Portfolio</h1>
     </div>
 
