@@ -12,31 +12,55 @@
             background-color: #f0f2f5; 
             color: #333; 
             line-height: 1.6;
+            padding-top: 80px; /* MODIFIED: Add padding to body to prevent content from being hidden by fixed header */
         }
         .header-banner {
             background-color: #159957; 
             background-image: linear-gradient(120deg, #155799, #159957); 
             color: white;
-            padding: 40px 20px; /* Adjusted padding a bit */
+            padding: 20px 20px; /* MODIFIED: Reduced top/bottom padding */
             text-align: center;
-            margin-bottom: 30px;
-            display: flex; /* Enable flexbox for alignment */
-            align-items: center; /* Vertically align items in the middle */
-            justify-content: center; /* Horizontally center items */
+            /* MODIFIED: Fixed header properties */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure header stays on top of other content */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add a subtle shadow to fixed header */
+            
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; /* MODIFIED: To space out title group and LinkedIn icon */
         }
-        .header-banner img.logo { /* Style for the logo */
-            height: 50px; /* Adjust size as needed */
+        .header-title-group { /* NEW: To group logo and h1 */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center title group if LinkedIn icon isn't there or for overall balance */
+            flex-grow: 1; /* Allow title group to take available space */
+        }
+        .header-banner img.logo { 
+            height: 40px; /* MODIFIED: Slightly smaller logo for reduced header */
             width: auto;
-            margin-right: 15px; /* Space between icon and title */
+            margin-right: 10px; /* MODIFIED: Reduced margin */
         }
         .header-banner h1 {
             margin: 0;
-            font-size: 2.8em; /* Slightly adjusted */
+            font-size: 2.2em; /* MODIFIED: Reduced font size for header */
             font-weight: 300; 
         }
+        .linkedin-link { /* NEW: Style for LinkedIn link/icon */
+            margin-left: auto; /* Push to the right if title group is centered */
+            padding-right: 30px; /* Space from the right edge */
+        }
+        .linkedin-link img {
+            height: 30px; /* Adjust size of LinkedIn icon */
+            width: auto;
+            vertical-align: middle; /* Align icon nicely if there were text next to it */
+        }
+
         .container {
             max-width: 1200px; 
-            margin: auto;
+            margin: 30px auto 0 auto; /* MODIFIED: Adjusted top margin due to fixed header, removed bottom margin from here */
             padding: 20px; 
         }
         .intro-text { 
@@ -53,7 +77,7 @@
             justify-content: center; 
         }
         .project {
-            background-color: #157A7A; /* Your chosen teal color */
+            background-color: #157A7A; 
             color: white; 
             padding: 25px; 
             border-radius: 6px; 
@@ -74,10 +98,26 @@
             .project {
                 flex-basis: 100%; 
             }
+            .header-banner { /* Adjust header for smaller screens */
+                padding: 15px 10px;
+                justify-content: center; /* Center content better on small screens */
+            }
+            .header-banner h1 {
+                font-size: 1.8em;
+            }
+            .header-banner img.logo {
+                height: 30px;
+            }
+            .linkedin-link { /* Ensure LinkedIn icon is visible and spaced */
+                padding-right: 15px; 
+            }
+            body {
+                padding-top: 70px; /* Adjust body padding for potentially smaller fixed header */
+            }
         }
 
         .project h2 {
-            color: #ffffff; /* White for titles on teal background */
+            color: #ffffff; 
             margin-top: 0; 
             margin-bottom: 15px; 
             font-size: 1.6em; 
@@ -95,7 +135,7 @@
             border-radius: 4px; 
             margin-top: 15px;
             margin-bottom: 20px; 
-            border: 1px solid #20a0a0; /* Adjusted border to complement teal */
+            border: 1px solid #20a0a0; 
         }
         
         .project .project-link { 
@@ -132,9 +172,15 @@
 </head>
 <body>
     <div class="header-banner">
-        <!-- ADDED IMAGE HERE -->
-        <img src="images/dashicon.png" alt="Dashboard Icon" class="logo"> 
-        <h1>ZappPSR's Portfolio</h1>
+        <div class="header-title-group"> <!-- Group for logo and H1 -->
+            <img src="images/dashicon.png" alt="Dashboard Icon" class="logo"> 
+            <h1>ZappPSR's Portfolio</h1>
+        </div>
+        <div class="linkedin-link"> <!-- Container for LinkedIn icon -->
+            <a href="https://www.linkedin.com/in/paulo-sergio-rocha-18ba5868/" target="_blank" title="LinkedIn Profile">
+                <img src="images/LinkedIn_icon.png" alt="LinkedIn">
+            </a>
+        </div>
     </div>
 
     <div class="container">
