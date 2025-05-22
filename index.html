@@ -12,55 +12,52 @@
             background-color: #f0f2f5; 
             color: #333; 
             line-height: 1.6;
-            padding-top: 80px; /* MODIFIED: Add padding to body to prevent content from being hidden by fixed header */
+            padding-top: 80px; 
         }
         .header-banner {
             background-color: #159957; 
             background-image: linear-gradient(120deg, #155799, #159957); 
             color: white;
-            padding: 20px 20px; /* MODIFIED: Reduced top/bottom padding */
+            padding: 20px 20px; 
             text-align: center;
-            /* MODIFIED: Fixed header properties */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000; /* Ensure header stays on top of other content */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add a subtle shadow to fixed header */
-            
+            z-index: 1000; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
             display: flex; 
             align-items: center; 
-            justify-content: space-between; /* MODIFIED: To space out title group and LinkedIn icon */
+            justify-content: space-between; 
         }
-        .header-title-group { /* NEW: To group logo and h1 */
+        .header-title-group { 
             display: flex;
             align-items: center;
-            justify-content: center; /* Center title group if LinkedIn icon isn't there or for overall balance */
-            flex-grow: 1; /* Allow title group to take available space */
+            justify-content: center; 
+            flex-grow: 1; 
         }
         .header-banner img.logo { 
-            height: 40px; /* MODIFIED: Slightly smaller logo for reduced header */
+            height: 40px; 
             width: auto;
-            margin-right: 10px; /* MODIFIED: Reduced margin */
+            margin-right: 10px; 
         }
         .header-banner h1 {
             margin: 0;
-            font-size: 2.2em; /* MODIFIED: Reduced font size for header */
+            font-size: 2.2em; 
             font-weight: 300; 
         }
-        .linkedin-link { /* NEW: Style for LinkedIn link/icon */
-            margin-left: auto; /* Push to the right if title group is centered */
-            padding-right: 30px; /* Space from the right edge */
+        .linkedin-link { 
+            margin-left: auto; 
+            padding-right: 30px; 
         }
         .linkedin-link img {
-            height: 30px; /* Adjust size of LinkedIn icon */
+            height: 30px; 
             width: auto;
-            vertical-align: middle; /* Align icon nicely if there were text next to it */
+            vertical-align: middle; 
         }
-
         .container {
             max-width: 1200px; 
-            margin: 30px auto 0 auto; /* MODIFIED: Adjusted top margin due to fixed header, removed bottom margin from here */
+            margin: 30px auto 0 auto; 
             padding: 20px; 
         }
         .intro-text { 
@@ -69,7 +66,6 @@
             font-size: 1.2em; 
             color: #555;
         }
-        
         .projects-grid {
             display: flex; 
             flex-wrap: wrap; 
@@ -93,14 +89,13 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
         }
-
         @media (max-width: 768px) {
             .project {
                 flex-basis: 100%; 
             }
-            .header-banner { /* Adjust header for smaller screens */
+            .header-banner { 
                 padding: 15px 10px;
-                justify-content: center; /* Center content better on small screens */
+                justify-content: center; 
             }
             .header-banner h1 {
                 font-size: 1.8em;
@@ -108,14 +103,13 @@
             .header-banner img.logo {
                 height: 30px;
             }
-            .linkedin-link { /* Ensure LinkedIn icon is visible and spaced */
+            .linkedin-link { 
                 padding-right: 15px; 
             }
             body {
-                padding-top: 70px; /* Adjust body padding for potentially smaller fixed header */
+                padding-top: 70px; 
             }
         }
-
         .project h2 {
             color: #ffffff; 
             margin-top: 0; 
@@ -137,7 +131,6 @@
             margin-bottom: 20px; 
             border: 1px solid #20a0a0; 
         }
-        
         .project .project-link { 
             display: inline-block;
             padding: 12px 25px; 
@@ -156,7 +149,6 @@
             background-color: rgba(255, 255, 255, 0.25); 
             border-color: rgba(255, 255, 255, 0.5);
         }
-
         .footer-banner { 
             text-align: center;
             margin-top: 50px; 
@@ -172,11 +164,11 @@
 </head>
 <body>
     <div class="header-banner">
-        <div class="header-title-group"> <!-- Group for logo and H1 -->
+        <div class="header-title-group">
             <img src="images/dashicon.png" alt="Dashboard Icon" class="logo"> 
             <h1>ZappPSR's Portfolio</h1>
         </div>
-        <div class="linkedin-link"> <!-- Container for LinkedIn icon -->
+        <div class="linkedin-link">
             <a href="https://www.linkedin.com/in/paulo-sergio-rocha-18ba5868/" target="_blank" title="LinkedIn Profile">
                 <img src="images/LinkedIn_icon.png" alt="LinkedIn">
             </a>
@@ -187,7 +179,18 @@
         <p class="intro-text">Welcome! Showcasing my data visualization and API integration projects.</p>
 
         <div class="projects-grid">
-            <!-- Project 1: Social Media Dashboard -->
+            <!-- Project 1: World Bank KPIs Dashboard (NEW - ADDED FIRST) -->
+            <div class="project">
+                <h2>World Bank Countries KPIs</h2>
+                <p class="description">
+                    This interactive dashboard presents key performance indicators (KPIs) such as GDP, Population, Life Expectancy, and Internet Access for around 200 countries over a 5-year period. 
+                    Data is sourced from the World Bank and REST Countries APIs via Python, and visualized using Power BI to allow for global and regional comparisons.
+                </p>
+                <img src="images/bi_world_kpis.png" alt="World Bank KPIs Dashboard Screenshot">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNWI0OGRjNzYtZjEzNS00ZTQ1LWFlNTgtMTMwMmI1MjY2ZmJiIiwidCI6Ijg4MTc0MzBhLWU0NzctNGM4OC05OTAwLTljOGRlN2E5ODljNCJ9" target="_blank" class="project-link">View World KPIs Dashboard</a>
+            </div>
+
+            <!-- Project 2: Social Media Dashboard -->
             <div class="project">
                 <h2>Social Media Trends Dashboard</h2>
                 <p class="description">
@@ -198,7 +201,7 @@
                 <a href="https://app.powerbi.com/view?r=eyJrIjoiZDc5NWNhYTAtODhkMC00MzFkLTkwYzgtYmZhZGQzYTUyMTUxIiwidCI6Ijg4MTc0MzBhLWU0NzctNGM4OC05OTAwLTljOGRlN2E5ODljNCJ9" target="_blank" class="project-link">View Social Dashboard</a>
             </div>
 
-            <!-- Project 2: Pokemon Directory -->
+            <!-- Project 3: Pokemon Directory -->
             <div class="project">
                 <h2>Pokémon Directory</h2>
                 <p class="description">
@@ -210,8 +213,9 @@
             </div>
 
             <!-- TO ADD MORE PROJECTS:
-                 Copy the entire <div class="project"> ... </div> block 
-                 and paste it here, then update the content (h2, p, img src, a href).
+                 Copy an existing <div class="project"> ... </div> block,
+                 paste it here, and then update its content (h2, p.description, img src, a href).
+                 The new project will slot into the two-column grid automatically.
             -->
 
         </div> <!-- End of .projects-grid -->
